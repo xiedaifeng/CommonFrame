@@ -5,11 +5,14 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.novoda:bintray-release:+'
+
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
 
 //        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
 //        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
@@ -23,6 +26,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
     //加上这些
     tasks.withType(Javadoc) {
