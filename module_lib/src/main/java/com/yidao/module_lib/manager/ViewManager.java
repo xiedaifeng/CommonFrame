@@ -1,8 +1,5 @@
 package com.yidao.module_lib.manager;
 
-import android.app.Activity;
-import android.content.Context;
-
 import com.yidao.module_lib.base.BaseView;
 import com.yidao.module_lib.base.ibase.IBaseView;
 import com.yidao.module_lib.utils.ObjectUtil;

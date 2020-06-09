@@ -142,6 +142,19 @@ public abstract class BaseDialog<T extends IBasePress> extends Dialog implements
     }
 
     @Override
+    public void skipActivityForResult(Class<? extends IBaseView> view, int requestCode){
+        Intent intent1 = new Intent(getContext(), view);
+        getAty().startActivityForResult(intent1,requestCode);
+    }
+
+    @Override
+    public void skipActivityForResult(Class<? extends IBaseView> view, Bundle bundle,int requestCode){
+        Intent intent1 = new Intent(getContext(), view);
+        intent1.putExtras(bundle);
+        getAty().startActivityForResult(intent1,requestCode);
+    }
+
+    @Override
     public void dismissLoaddingDialog() {
 
     }

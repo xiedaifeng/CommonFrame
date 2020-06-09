@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.app"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -39,5 +39,7 @@ dependencies {
     })
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
-    implementation 'com.github.xiedaifeng:CommonFrame:v1.0.0'
+    implementation 'com.github.xiedaifeng:CommonFrame:1.0.3'
+
+//    implementation project(':module_lib')
 }

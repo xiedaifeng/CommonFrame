@@ -1,1 +1,1 @@
-include ':module_lib', ':app'
+include ':module_lib', ':app',':http_lib'

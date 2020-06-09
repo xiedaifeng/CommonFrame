@@ -41,6 +41,10 @@ public interface IBaseView  {
 
     public void skipActivityByFinish(Class<? extends IBaseView> view, Bundle bundle) ;
 
+    public void skipActivityForResult(Class<? extends IBaseView> view, int requestCode) ;
+
+    public void skipActivityForResult(Class<? extends IBaseView> view, Bundle bundle,int requestCode) ;
+
     void dismissLoaddingDialog();
 
     void showLoaddingDialog();
@@ -48,7 +52,4 @@ public interface IBaseView  {
     void setLoaddingMsg(String msg);
 
     LoadingAlertDialog getLoadingDialog();
-
-
-
 }

@@ -7,25 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.gyf.barlibrary.ImmersionBar;
-import com.yidao.module_lib.R;
 import com.yidao.module_lib.base.http.ResponseBean;
-import com.yidao.module_lib.base.ibase.IBaseEvent;
 import com.yidao.module_lib.base.ibase.IBaseEventPlus;
 import com.yidao.module_lib.base.ibase.IBaseView;
 import com.yidao.module_lib.manager.ViewManager;
 import com.yidao.module_lib.utils.LoggerUtils;
+import com.yidao.module_lib.utils.SoftKeyboardUtil;
 import com.yidao.module_lib.utils.ToastUtil;
 import com.yidao.module_lib.widget.LoadingAlertDialog;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
-
-
-//import com.duanqu.qupaicustomuidemo.StartUI;
-
 
 /**
  * Created by xiaochan on 2017/6/19.
@@ -166,6 +160,7 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView , 
     public void skipActivity(Class<? extends IBaseView> view) {
         Intent intent1 = new Intent(this, view);
         startActivity(intent1);
+        SoftKeyboardUtil.hideSoftKeyboard(this);
     }
 
     @Override
@@ -173,13 +168,16 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView , 
         Intent intent1 = new Intent(this, view);
         intent1.putExtras(bundle);
         startActivity(intent1);
+        SoftKeyboardUtil.hideSoftKeyboard(this);
     }
 
+    @Override
     public void skipActivityForResult(Class<? extends IBaseView> view, int requestCode){
         Intent intent1 = new Intent(this, view);
         startActivityForResult(intent1,requestCode);
     }
 
+    @Override
     public void skipActivityForResult(Class<? extends IBaseView> view, Bundle bundle,int requestCode){
         Intent intent1 = new Intent(this, view);
         intent1.putExtras(bundle);

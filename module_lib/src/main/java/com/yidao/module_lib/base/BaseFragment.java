@@ -16,6 +16,7 @@ import com.yidao.module_lib.base.ibase.IBasePress;
 import com.yidao.module_lib.base.ibase.IBaseView;
 import com.yidao.module_lib.manager.ViewManager;
 import com.yidao.module_lib.utils.LoggerUtils;
+import com.yidao.module_lib.utils.SoftKeyboardUtil;
 import com.yidao.module_lib.utils.ToastUtil;
 import com.yidao.module_lib.widget.LoadingAlertDialog;
 
@@ -106,7 +107,6 @@ public abstract class BaseFragment<T extends IBasePress> extends Fragment implem
 
     @Override
     public void onDestroyView() {
-//        cancelToast();
         LoggerUtils.debug("lifeCircle", getClass(), "Fragment onDestroyView");
         super.onDestroyView();
     }
@@ -149,17 +149,27 @@ public abstract class BaseFragment<T extends IBasePress> extends Fragment implem
     @Override
     public void skipActivityByFinish(Class<? extends IBaseView> view) {
         skipActivity(view);
-//        getActivity().finish();
         ViewManager.getInstance().finishView();
     }
 
     @Override
     public void skipActivityByFinish(Class<? extends IBaseView> view, Bundle bundle) {
         skipActivity(view, bundle);
-//        getActivity().finish();
         ViewManager.getInstance().finishView();
     }
 
+    @Override
+    public void skipActivityForResult(Class<? extends IBaseView> view, int requestCode){
+        Intent intent1 = new Intent(getContext(), view);
+        startActivityForResult(intent1,requestCode);
+    }
+
+    @Override
+    public void skipActivityForResult(Class<? extends IBaseView> view, Bundle bundle,int requestCode){
+        Intent intent1 = new Intent(getContext(), view);
+        intent1.putExtras(bundle);
+        startActivityForResult(intent1,requestCode);
+    }
 
     /**
      * 吐司，由子类调用

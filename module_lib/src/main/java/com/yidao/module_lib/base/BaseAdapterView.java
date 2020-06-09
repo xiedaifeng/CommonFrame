@@ -1,6 +1,7 @@
 package com.yidao.module_lib.base;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -121,7 +122,6 @@ public abstract class BaseAdapterView implements IBaseView {
         act.skipActivity(view, bundle);
     }
 
-
     @Override
     public void skipActivityByFinish(Class<? extends IBaseView> view) {
         act.skipActivityByFinish(view);
@@ -130,6 +130,16 @@ public abstract class BaseAdapterView implements IBaseView {
     @Override
     public void skipActivityByFinish(Class<? extends IBaseView> view, Bundle bundle) {
         act.skipActivityByFinish(view, bundle);
+    }
+
+    @Override
+    public void skipActivityForResult(Class<? extends IBaseView> view, int requestCode){
+        act.skipActivityForResult(view, requestCode);
+    }
+
+    @Override
+    public void skipActivityForResult(Class<? extends IBaseView> view, Bundle bundle,int requestCode){
+        act.skipActivityForResult(view,bundle, requestCode);
     }
 
     @Override
