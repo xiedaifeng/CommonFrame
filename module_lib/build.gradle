@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
-//apply plugin: 'com.github.dcendents.android-maven'
-//group='com.github.xiedaifeng'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.xiedaifeng'
 
 android {
     compileSdkVersion 29
@@ -68,6 +68,10 @@ dependencies {
     api 'top.zibin:Luban:1.1.8'
 
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+    //网络请求
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    api 'com.aliyun.dpa:oss-android-sdk:+'
 }
 
 //publish {
