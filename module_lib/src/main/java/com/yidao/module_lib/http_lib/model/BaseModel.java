@@ -1,15 +1,13 @@
-package com.example.http_lib.model;
+package com.yidao.module_lib.http_lib.model;
 
-import android.util.Log;
-
-import com.example.http_lib.HttpClient;
-import com.example.http_lib.bean.LoginBean;
 import com.yidao.module_lib.base.BaseApplication;
 import com.yidao.module_lib.base.BaseBean;
 import com.yidao.module_lib.base.http.ResponseBean;
 import com.yidao.module_lib.base.http.callback.IHttpCallBack;
 import com.yidao.module_lib.base.ibase.IBaseModel;
 import com.yidao.module_lib.base.ibase.IBasePress;
+import com.yidao.module_lib.http_lib.HttpClient;
+import com.yidao.module_lib.http_lib.bean.LoginBean;
 import com.yidao.module_lib.utils.PackageUtils;
 import com.yidao.module_lib.utils.PhoneInfoUtils;
 import com.yidao.module_lib.utils.SharedPreferencesUtils;
@@ -61,32 +59,32 @@ public abstract class BaseModel<T extends IBasePress> implements IBaseModel<T> {
     public void failed(ResponseBean responseBean) {
         getPress().failed(responseBean);
         if (responseBean.getCode() == 10000) {
-//            keepCookie();
+            keepCookie();
         }
     }
 
     private void keepCookie() {
 
-//        LoginBean loginBean = new LoginBean();
-//        loginBean.setImei(PhoneInfoUtils.getPhoneSign());
-//        String moblie = SharedPreferencesUtils.getString("MOBLIE", "");
-//        loginBean.setMobile(moblie);
-//        loginBean.setPhoneModel(PhoneInfoUtils.getSystemModel());
-//        loginBean.setPhoneType(1);
-//        loginBean.setType(0);
-//        loginBean.setVersion(String.valueOf(PackageUtils.getVersionCode(BaseApplication.getApplication())));
-//        setBean(loginBean);
-//        HttpClient.request(getBean(), false, new IHttpCallBack() {
-//            @Override
-//            public void success(ResponseBean responseBean) {
-//
-//            }
-//
-//            @Override
-//            public void failed(ResponseBean responseBean) {
-//
-//            }
-//        });
+        LoginBean loginBean = new LoginBean();
+        loginBean.setImei(PhoneInfoUtils.getPhoneSign());
+        String moblie = SharedPreferencesUtils.getString("MOBLIE", "");
+        loginBean.setMobile(moblie);
+        loginBean.setPhoneModel(PhoneInfoUtils.getSystemModel());
+        loginBean.setPhoneType(1);
+        loginBean.setType(0);
+        loginBean.setVersion(String.valueOf(PackageUtils.getVersionCode(BaseApplication.getApplication())));
+        setBean(loginBean);
+        HttpClient.request(getBean(), false, new IHttpCallBack() {
+            @Override
+            public void success(ResponseBean responseBean) {
+
+            }
+
+            @Override
+            public void failed(ResponseBean responseBean) {
+
+            }
+        });
     }
 
 }

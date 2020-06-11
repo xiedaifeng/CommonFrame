@@ -58,6 +58,7 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView , 
         if(useStatusBarDarkFont()){
             mImmersionBar.statusBarDarkFont(true);
         }
+
         init();
     }
 

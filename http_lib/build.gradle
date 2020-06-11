@@ -25,19 +25,28 @@ android {
         }
     }
 
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api  fileTree(include: ['*.aar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0-alpha3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha3'
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api   fileTree(include: ['*.aar'], dir: 'libs')
 
-    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+
+//    api (name:'module_lib-release',ext:'aar'){transitive=true}
+
+    api 'androidx.appcompat:appcompat:1.0.2'
+
+    api 'com.squareup.okhttp3:okhttp:3.11.0'
 
     api 'com.aliyun.dpa:oss-android-sdk:+'
 
+    api 'com.alibaba:fastjson:1.2.39'
+
 //    api project(':module_lib')
+
 }

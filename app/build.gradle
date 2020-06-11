@@ -45,7 +45,7 @@ dependencies {
 
 //    implementation 'com.github.xiedaifeng:CommonFrame:1.0.3'
 
-//    implementation project(':http_lib')
+    implementation project(':http_lib')
 
-    implementation 'com.github.xiedaifeng:CommonFrame:1.0.0'
+//    implementation 'com.github.xiedaifeng:CommonFrame:1.0.3'
 }

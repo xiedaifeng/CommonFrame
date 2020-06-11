@@ -10,7 +10,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.novoda:bintray-release:+'
+//        classpath 'com.novoda:bintray-release:+'
 
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
 
@@ -27,6 +27,7 @@ allprojects {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
+
     }
     //加上这些
     tasks.withType(Javadoc) {
