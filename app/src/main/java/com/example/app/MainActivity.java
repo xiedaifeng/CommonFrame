@@ -1,6 +1,6 @@
 package com.example.app;
 
-import android.os.Bundle;
+
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -9,7 +9,6 @@ import com.yidao.module_lib.base.BaseView;
 import com.yidao.module_lib.utils.CommonGlideUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseView {

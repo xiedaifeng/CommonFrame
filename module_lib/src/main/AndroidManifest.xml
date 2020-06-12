@@ -7,7 +7,7 @@
     <application>
 
         <provider
-            android:name="androidx.core.content.FileProvider"
+            android:name="android.support.v4.content.FileProvider"
             android:authorities="RPLACE_APPLICATION_ID.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">

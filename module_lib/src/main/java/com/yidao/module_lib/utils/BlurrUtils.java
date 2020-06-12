@@ -14,8 +14,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
-
 /**
  * Created with XIAOYUDEXIEE.
  * Date: 2019/11/13
@@ -158,7 +156,7 @@ public class BlurrUtils {
         }
 
         @Override
-        public void handleMessage(@NonNull Message msg) {
+        public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if (msg.what == 0) {
                 imageView.setVisibility(View.GONE);

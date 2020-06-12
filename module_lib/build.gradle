@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
-apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.xiedaifeng'
+//apply plugin: 'com.github.dcendents.android-maven'
+//group='com.github.xiedaifeng'
 
 android {
     compileSdkVersion 29
@@ -33,26 +33,18 @@ dependencies {
 //    implementation fileTree(dir: 'libs', include: ['*.jar'])
 //    api  fileTree(include: ['*.aar'], dir: 'libs')
 
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-
+//    api 'androidx.appcompat:appcompat:1.1.0'
 
     //状态栏处理工具类
-//    api 'com.gyf.barlibrary:barlibrary:2.3.0'
-    api('com.gyf.barlibrary:barlibrary:2.3.0', {
-        exclude group: 'com.android.support', module: 'appcompat-v7'
-        transitive = true
-    })
+    api 'com.gyf.barlibrary:barlibrary:2.3.0'
+//    api ('com.gyf.barlibrary:barlibrary:2.3.0', {
+//        exclude group: 'com.android.support', module: 'appcompat-v7'
+//    })
     //布局注解工具
-//    api 'com.jakewharton:butterknife:8.5.1'
-    api('com.jakewharton:butterknife:8.5.1', {
-        exclude group: 'com.android.support', module: 'support-compat'
-    })
+    api 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
-//    api 'com.github.bumptech.glide:glide:4.8.0'
-    api('com.github.bumptech.glide:glide:4.8.0', {
-        exclude group: 'com.android.support', module: 'support-compat'
-    })
+    api 'com.github.bumptech.glide:glide:4.8.0'
 
     // RxJava
     api 'io.reactivex.rxjava2:rxjava:2.1.9'
@@ -68,10 +60,6 @@ dependencies {
     api 'com.alibaba:fastjson:1.2.39'
     api 'top.zibin:Luban:1.1.8'
 
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-
-    api 'com.squareup.okhttp3:okhttp:3.11.0'
-
-    api 'com.aliyun.dpa:oss-android-sdk:+'
+//    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 }
 

@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +23,6 @@ import com.yidao.module_lib.utils.BitmapUtils;
 
 import java.io.File;
 
-import androidx.core.content.FileProvider;
 import butterknife.ButterKnife;
 
 /**

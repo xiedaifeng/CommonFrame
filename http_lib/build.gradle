@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
-apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.xiedaifeng'
+//apply plugin: 'com.github.dcendents.android-maven'
+//group='com.github.xiedaifeng'
 
 android {
     compileSdkVersion 29
@@ -34,19 +34,19 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api   fileTree(include: ['*.aar'], dir: 'libs')
+//    api fileTree(include: ['*.aar'], dir: 'libs')
 
 
 //    api (name:'module_lib-release',ext:'aar'){transitive=true}
 
-    api 'androidx.appcompat:appcompat:1.0.2'
+//    implementation 'androidx.appcompat:appcompat:1.0.2'
 
     api 'com.squareup.okhttp3:okhttp:3.11.0'
 
     api 'com.aliyun.dpa:oss-android-sdk:+'
 
-    api 'com.alibaba:fastjson:1.2.39'
+//    api 'com.alibaba:fastjson:1.2.39'
 
-//    api project(':module_lib')
+    api project(':module_lib')
 
 }

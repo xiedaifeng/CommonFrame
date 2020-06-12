@@ -12,7 +12,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 //        classpath 'com.novoda:bintray-release:+'
 
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+//        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
 
 //        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'
 //        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
@@ -40,4 +40,15 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+subprojects {
+    project.configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'com.android.support'
+                    && !details.requested.name.contains('multidex') ) {
+                details.useVersion "27.1.1"
+            }
+        }
+    }
 }

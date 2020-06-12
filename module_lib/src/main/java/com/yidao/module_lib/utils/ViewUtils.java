@@ -5,10 +5,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SimpleItemAnimator;
-
 
 /**
  * Created with XIAOYUDEXIEE.
@@ -57,25 +53,25 @@ public class ViewUtils {
     /**
      * 关闭默认局部刷新动画
      */
-    public static void closeDefaultAnimator(RecyclerView mRvCustomer) {
-        if(null==mRvCustomer)return;
-        mRvCustomer.getItemAnimator().setAddDuration(0);
-        mRvCustomer.getItemAnimator().setChangeDuration(0);
-        mRvCustomer.getItemAnimator().setMoveDuration(0);
-        mRvCustomer.getItemAnimator().setRemoveDuration(0);
-        ((SimpleItemAnimator) mRvCustomer.getItemAnimator()).setSupportsChangeAnimations(false);
-    }
-
-
-    public static int getScollYDistance(RecyclerView recyclerView) {
-        LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-        if (layoutManager == null) return 0;
-        int position = layoutManager.findFirstVisibleItemPosition();
-        View firstVisiableChildView = layoutManager.findViewByPosition(position);
-        if (firstVisiableChildView ==null) return 0;
-        int itemHeight = firstVisiableChildView.getHeight();
-        return (position) * itemHeight - firstVisiableChildView.getTop();
-    }
+//    public static void closeDefaultAnimator(RecyclerView mRvCustomer) {
+//        if(null==mRvCustomer)return;
+//        mRvCustomer.getItemAnimator().setAddDuration(0);
+//        mRvCustomer.getItemAnimator().setChangeDuration(0);
+//        mRvCustomer.getItemAnimator().setMoveDuration(0);
+//        mRvCustomer.getItemAnimator().setRemoveDuration(0);
+//        ((SimpleItemAnimator) mRvCustomer.getItemAnimator()).setSupportsChangeAnimations(false);
+//    }
+//
+//
+//    public static int getScollYDistance(RecyclerView recyclerView) {
+//        LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+//        if (layoutManager == null) return 0;
+//        int position = layoutManager.findFirstVisibleItemPosition();
+//        View firstVisiableChildView = layoutManager.findViewByPosition(position);
+//        if (firstVisiableChildView ==null) return 0;
+//        int itemHeight = firstVisiableChildView.getHeight();
+//        return (position) * itemHeight - firstVisiableChildView.getTop();
+//    }
 
     public static void setClickSwitch(boolean isClick,View view){
         view.setEnabled(isClick);

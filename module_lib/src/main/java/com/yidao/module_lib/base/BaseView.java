@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -17,8 +18,6 @@ import com.yidao.module_lib.utils.SoftKeyboardUtil;
 import com.yidao.module_lib.utils.ToastUtil;
 import com.yidao.module_lib.widget.LoadingAlertDialog;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import butterknife.ButterKnife;
 
 /**
@@ -37,7 +36,7 @@ public abstract class BaseView extends AppCompatActivity implements IBaseView , 
     protected ImmersionBar mImmersionBar;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         LoggerUtils.debug("lifecycle", this.getClass(), "Activity OnCreate");
         ViewManager.getInstance().addView(this);
         super.onCreate(savedInstanceState);

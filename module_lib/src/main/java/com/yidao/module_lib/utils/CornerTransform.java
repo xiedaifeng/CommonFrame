@@ -18,7 +18,6 @@ import com.bumptech.glide.util.Util;
 
 import java.security.MessageDigest;
 
-import androidx.annotation.NonNull;
 
 public class CornerTransform implements Transformation<Bitmap> {
  
@@ -127,7 +126,7 @@ public class CornerTransform implements Transformation<Bitmap> {
     }
 
     @Override
-    public void updateDiskCacheKey(@NonNull MessageDigest messageDigest) {
+    public void updateDiskCacheKey(MessageDigest messageDigest) {
 
     }
 
@@ -136,9 +135,9 @@ public class CornerTransform implements Transformation<Bitmap> {
         return Util.hashCode(getId().hashCode(), Util.hashCode(this.radius));
     }
 
-    @NonNull
+
     @Override
-    public Resource<Bitmap> transform(@NonNull Context context, @NonNull Resource<Bitmap> resource, int outWidth, int outHeight) {
+    public Resource<Bitmap> transform( Context context,  Resource<Bitmap> resource, int outWidth, int outHeight) {
         Bitmap source =  resource.get();
         int finalWidth, finalHeight;
         float ratio; //输出目标的宽高或高宽比例
